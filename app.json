@@ -1,0 +1,58 @@
+{
+  "pages":[
+   
+    "Teacher/TeacherMainUI",
+    "common/ChooseCharacter",
+    "Student/StudentMainUI",
+    "Student/CourseUI",
+    
+    "Teacher/GroupInfoUI1",
+    
+    
+    "Teacher/ClassManage",
+
+
+    
+    "Student/CheckStudentInfo",
+    "Student/ChooseSchool",
+    "Student/ChooseSchool3",
+    "Student/ChooseSchool5",
+    "Student/CourseInfoUI",
+    
+    "Student/FixedGroupNoLeaderUI",
+    "Student/GradePresentationUI",
+    "Student/GroupChooseTopicUI",
+   
+    "Student/RollCallUI",
+    "Student/Seminar",
+    "Student/StudentBindingUI",
+    "Student/StudentBindingUI2",
+    
+   
+    "Teacher/TeacherBindingUI",
+    "Teacher/ChooseSchool2",
+    "Teacher/ChooseSchool4",
+    "Teacher/ChooseSchoolNoSchoolForTeacher",
+    "Teacher/TeacherBindingUI2",
+    "Teacher/RandomRollStartCallUI",
+    "Teacher/FixedRollStartCallUI",
+    "Teacher/FixedRollCallUI",
+    "Teacher/RandomRollCallUI",
+    "common/CreateSchoolUI",
+    "Teacher/CheckTeacherInfo",
+  
+    "Teacher/RollCallListUI",
+    "Teacher/RandomEndRollCallUI",
+    
+    
+    "Teacher/FixedGroupInfoUI",
+    "Teacher/FixedEndRollCallUI",
+    "Teacher/FixedRollCallEndUI1"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  }
+}

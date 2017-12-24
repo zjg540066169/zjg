@@ -1,0 +1,84 @@
+<page>
+  <!--设置左上角的usersIcon-->
+  <view class="blueUsersView">
+    <image src="../images/users.png" class='blueUsersIcon' />
+    <strong>队伍信息</strong>
+  </view>
+
+
+  <!--细线，hr不好设置css，用一个高度很小的view来代替-->
+  <view class="hrView">
+  </view>
+
+
+  <!--学生名单上面那个蓝色的bar-->
+  <view wx:for="{{classGroup}}" wx:for-item="group">
+    <view class='studentListBarView' id="{{group.id}}" bindtap='changeGroup'>
+      <span>{{group.name}}</span>
+      <span class="groupTopics">选题：
+        <span wx:for="{{group.topics}}" wx:for-item="topic">
+          {{topic.name}}
+        </span>
+      </span>
+    </view>
+    <view wx:if="{{groupInfo.id ==group.id && display }}" class="studentView">
+      <view class='studentBlock'>
+        <image src="../images/user.png" class='userIcon' />
+        <span class="studentName">{{groupInfo.leader.name}}</span>
+      </view>
+      <view wx:for="{{groupInfo.members}}" wx:for-item="member">
+        <view class='studentBlock'>
+          <image src="../images/user.png" class='userIcon' />
+          <span class="studentName">{{member.name}}</span>
+        </view>
+      </view>
+
+      <!--迟到学生-->
+      <view wx:for="{{lateOn}}" wx:for-item="member" wx:if="{{member.group == group.id}}">
+        <view class='studentBlock' >
+          <image src="../images/user.png" class='userIcon' />
+          <span class="studentName">{{member.name}}</span>
+          <image src="../images/redCross.png" class='redCancelIcon' bindtap='cancelLateStudent' id = "{{member.id}}"/>
+        </view>
+      </view>
+      <view class='studentBlock'>
+        <image src="../images/add.png" class='addIcon' bindtap="showmodalimg" />
+      </view>
+
+
+    </view>
+  </view>
+  <view class='studentListBarView'>
+    未签到学生
+  </view>
+
+  <view wx:for="{{absent}}" class="studentView">
+    <view class='studentBlock' id="{{item.id}}">
+      <image src="../images/user.png" class='userIcon' />
+      <span class="studentName">{{item.name}}</span>
+    </view>
+  </view>
+
+
+
+  <!--弹窗-->
+  <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  <view class="modal-dialog" wx:if="{{showModal}}">
+    <view class="modal-title">添加学生</view>
+    <view class="modal-content">
+      <scroll-view scroll-y style="height: 100px;" scroll-into-view="red" scroll-top="100">
+        <view class='modal-list' wx:for="{{late}}" bindtap="select">
+          <span id="{{item.id}}" class="{{(lateSelectMem == item.id)?'input-holder-select':'input-holder'}}">{{item.name}}</span>
+        </view>
+
+      </scroll-view>
+    </view>
+
+    <view class="modal-footer">
+      <view class="btn-cancel" bindtap="onCancel">取消</view>
+      <view class="btn-confirm" bindtap="onConfirm">确定</view>
+    </view>
+  </view>
+
+
+</page>
