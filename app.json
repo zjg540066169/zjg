@@ -1,8 +1,8 @@
 {
   "pages":[
-   
-    "Teacher/TeacherMainUI",
     "common/ChooseCharacter",
+    "Teacher/TeacherMainUI",
+  
     "Student/StudentMainUI",
     "Student/CourseUI",
     
